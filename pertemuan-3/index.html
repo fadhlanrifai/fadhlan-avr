@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum AVR - Pertemuan 3 | Fadhlan Rifa'i</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; background: #111827; }
+    #hud {
+      position: fixed; z-index: 5; top: 14px; left: 14px; right: 14px;
+      color: #fff; pointer-events: none; display: flex; justify-content: space-between;
+      gap: 12px; align-items: flex-start;
+    }
+    .panel {
+      background: rgba(10, 16, 30, .78); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 12px; padding: 12px 15px; max-width: 560px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.2);
+    }
+    .panel h1 { font-size: 15px; margin: 0 0 5px; }
+    .panel p { font-size: 12px; line-height: 1.5; margin: 0; color: #d1d5db; }
+    #log { margin-top: 7px; color: #93c5fd; font-size: 12px; }
+    #hint { text-align: right; }
+    @media(max-width:650px) {
+      #hud { flex-direction: column; }
+      #hint { text-align: left; }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="hud">
+    <div class="panel">
+      <h1>Praktikum Augmented dan Virtual Reality — Pertemuan 3</h1>
+      <p>Nama: Fadhlan Rifa'i | NPM: 2309020350</p>
+      <p>Interaksi: hover, grab, release, squeeze, ubah skala, dan klik mouse.</p>
+      <div id="log">Log: halaman siap. Klik objek untuk mengubah warna atau tekan ENTER VR.</div>
+    </div>
+    <div class="panel" id="hint">
+      <h1>Petunjuk Mode Desktop</h1>
+      <p>Putar kamera dengan mouse. Klik salah satu objek untuk mengganti warna.</p>
+      <p>Mode WebXR memerlukan emulator/headset dan HTTPS atau localhost.</p>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
